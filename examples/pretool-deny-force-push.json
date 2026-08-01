@@ -1,0 +1,11 @@
+{
+  "conversationId": "rigor-guard-example-deny",
+  "stepIdx": 1,
+  "workspacePaths": [],
+  "toolCall": {
+    "name": "run_command",
+    "args": {
+      "CommandLine": "git push origin feature/example --force-with-lease"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "rigor-guard": {
+    "enabled": true,
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"__RIGOR_GUARD_PLUGIN_DIR__/scripts/guard-command.mjs\"",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"__RIGOR_GUARD_PLUGIN_DIR__/scripts/post-tool-use.mjs\"",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "type": "command",
+        "command": "node \"__RIGOR_GUARD_PLUGIN_DIR__/scripts/verify-before-stop.mjs\"",
+        "timeout": 180
+      }
+    ]
+  }
+}

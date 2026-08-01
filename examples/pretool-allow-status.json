@@ -1,0 +1,11 @@
+{
+  "conversationId": "rigor-guard-example-allow",
+  "stepIdx": 1,
+  "workspacePaths": [],
+  "toolCall": {
+    "name": "run_command",
+    "args": {
+      "CommandLine": "git status --short"
+    }
+  }
+}

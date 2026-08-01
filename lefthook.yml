@@ -1,0 +1,13 @@
+pre-commit:
+  commands:
+    git-diff-check:
+      run: git --no-pager diff --cached --check
+    test-preservation:
+      run: node scripts/verify-test-preservation.mjs
+
+pre-push:
+  commands:
+    verify-local:
+      run: node scripts/verify-local.mjs
+    verify-report:
+      run: node scripts/verify-report-claims.mjs

@@ -1,0 +1,10 @@
+{
+  "taskType": "delivery",
+  "baseBranch": "main",
+  "verificationCommands": [
+    "npm test"
+  ],
+  "reportGlobs": [
+    "docs/deliverables/*.md"
+  ]
+}

@@ -1,0 +1,65 @@
+name: Bug report
+description: Report an incorrect guard decision, verification failure, or compatibility problem
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include credentials, private logs, or exploit details for security-sensitive bypasses. Follow SECURITY.md instead.
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      placeholder: v1.0.0 or commit SHA
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: macOS 15, Node.js 22, Antigravity build
+    validations:
+      required: true
+  - type: dropdown
+    id: hook
+    attributes:
+      label: Affected layer
+      options:
+        - PreToolUse
+        - PostToolUse
+        - Stop
+        - Installer
+        - Test preservation
+        - GitHub verification
+        - Documentation
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Include a minimized payload or command with secrets removed.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I removed credentials and private repository information.
+          required: true
+        - label: I ran the current test suite.
+          required: false

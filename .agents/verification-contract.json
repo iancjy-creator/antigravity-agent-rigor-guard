@@ -2,7 +2,7 @@
   "taskType": "delivery",
   "baseBranch": "main",
   "verificationCommands": [
-    "npm test"
+    "npm run check"
   ],
   "reportGlobs": [
     "docs/deliverables/*.md"

@@ -1,0 +1,38 @@
+{
+  "name": "antigravity-rigor-guard",
+  "version": "1.0.0",
+  "description": "Fail-closed guardrails and verification gates for AI coding agents in Google Antigravity.",
+  "type": "module",
+  "main": "install.mjs",
+  "license": "MIT",
+  "author": "iancjy-creator",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iancjy-creator/antigravity-agent-rigor-guard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iancjy-creator/antigravity-agent-rigor-guard/issues"
+  },
+  "homepage": "https://github.com/iancjy-creator/antigravity-agent-rigor-guard#readme",
+  "keywords": [
+    "ai-agent",
+    "agent-harness",
+    "antigravity",
+    "guardrails",
+    "verification",
+    "git-safety",
+    "ci"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "check": "npm test && node scripts/verify-code-task.mjs && node scripts/verify-document-task.mjs",
+    "install-plugin": "node install.mjs",
+    "uninstall-plugin": "node uninstall.mjs"
+  },
+  "devDependencies": {
+    "lefthook": "^1.11.3"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "baseBranch": "main",
+  "requireCleanTreeOnStop": true,
+  "forbidForcePush": true,
+  "forbidTestDeletion": true,
+  "requireDraftPr": true,
+  "forbidMerge": true,
+  "verificationCommands": [
+    "cargo fmt --manifest-path src-tauri/Cargo.toml --check",
+    "cargo clippy --manifest-path src-tauri/Cargo.toml -- -D warnings",
+    "cargo test --manifest-path src-tauri/Cargo.toml -- --nocapture",
+    "npx tsc --noEmit",
+    "npm run build"
+  ],
+  "protectedPaths": [
+    ".github/workflows/**",
+    "src-tauri/tests/**",
+    "src-tauri/src/**"
+  ],
+  "reportGlobs": [
+    "docs/deliverables/*.md"
+  ],
+  "requiredWorkflow": "CI Validation"
+}
